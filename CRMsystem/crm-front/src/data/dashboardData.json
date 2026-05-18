@@ -1,0 +1,71 @@
+{
+  "kpiCards": [
+    {
+      "id": "clients",
+      "title": "Клієнти",
+      "icon": "fa-users",
+      "value": 1234,
+      "trend": "+12% цього місяця",
+      "bgClass": "bg-green"
+    },
+    {
+      "id": "sales",
+      "title": "Продажі",
+      "icon": "fa-chart-line",
+      "value": 45678,
+      "trend": "+8% цього місяця",
+      "prefix": "₴",
+      "bgClass": "bg-teal"
+    },
+    {
+      "id": "orders",
+      "title": "Замовлення",
+      "icon": "fa-cart-shopping",
+      "value": 89,
+      "trend": "+15% цього місяця",
+      "bgClass": "bg-purple"
+    }
+  ],
+  "chartData": {
+    "week": {
+      "labels": [
+        "Пн",
+        "Вв",
+        "Ср",
+        "Чт",
+        "Пт",
+        "Сб",
+        "Нд"
+      ],
+      "data": [
+        1200,
+        1900,
+        1500,
+        2200,
+        1800,
+        2500,
+        2100
+      ],
+      "color": "#0f766e"
+    },
+    "month": {
+      "labels": [
+        "Січ",
+        "Лют",
+        "Бер",
+        "Квіт",
+        "Трав",
+        "Черв"
+      ],
+      "data": [
+        45000,
+        52000,
+        48000,
+        61000,
+        55000,
+        67000
+      ],
+      "color": "#14b8a6"
+    }
+  }
+}

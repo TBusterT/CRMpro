@@ -1,4 +1,5 @@
-export const API_BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:3000';
+export const API_BASE_URL =
+  import.meta.env.VITE_API_URL || 'http://localhost:3000';
 const BASE_URL = API_BASE_URL;
 
 export const TOKEN_STORAGE_KEY = 'crm_auth_token';

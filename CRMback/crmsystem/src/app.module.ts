@@ -25,15 +25,17 @@ import { User } from './modules/users/entities/user.entity';
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
 
-    TypeOrmModule.forRoot({
+        TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DB_HOST || 'localhost',
-      port: Number(process.env.DB_PORT) || 5432,
-      username: process.env.DB_USER || 'postgres',
-      password: process.env.DB_PASSWORD || 'CRMproTop@',
-      database: process.env.DB_NAME || 'crmsystem',
+      url: process.env.DATABASE_URL,
+      host: process.env.DATABASE_URL ? undefined : process.env.DB_HOST || 'localhost',
+      port: process.env.DATABASE_URL ? undefined : Number(process.env.DB_PORT) || 5432,
+      username: process.env.DATABASE_URL ? undefined : process.env.DB_USER || 'postgres',
+      password: process.env.DATABASE_URL ? undefined : process.env.DB_PASSWORD || 'CRMproTop@',
+      database: process.env.DATABASE_URL ? undefined : process.env.DB_NAME || 'crmsystem',
       entities: [Client, Finance, Product, Conversation, Message, User],
       synchronize: true,
+      ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false,
     }),
 
     UsersModule,
